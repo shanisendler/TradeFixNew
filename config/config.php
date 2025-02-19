@@ -18,13 +18,15 @@ return [
         'host' => 'localhost',
         'username' => 'root',
         'password' => '',
-        'database' => 'tradefixbrglp_legalLoss',       
+        'database' => 'tradefixbrglp_legalLoss', 
+        'base_url' => '/tradefix/TradeFixNew',      
     ],
     'production' => [
-        'host' => 'webxpcpanel.spd.co.il',
+        'host' => 'localhost',//'webxpcpanel.spd.co.il',
         'username' => 'tradefixbrglp_legalLoss',
         'password' => '3XZWG;@6]JPA',
-        'database' => 'tradefixbrglp_legalLoss',        
+        'database' => 'tradefixbrglp_legalLoss',  
+        'base_url' => '/backend',      
     ],
 ];
 

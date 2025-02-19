@@ -16,6 +16,11 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);*/
+
+
+$environment = detectEnvironment();
+$base_url = $config[$environment]['base_url'];
+
 // Define global Variables.
 define("APP_NAME", "TradeFix");
 define("APP_DESCRIPTION", "");
@@ -27,7 +32,7 @@ define("LIB_DIR", dirname(__FILE__));
 define("COOKIE_DOMAIN", "");
 
 //If site disposed not in root path
-define("BASE_URL", '/tradefix');
+define("BASE_URL", $base_url);
 
 // Set the default controller hte user is directed to (aka homepage).
 define('ROUTER_DEFAULT_CONTROLLER', 'site');
