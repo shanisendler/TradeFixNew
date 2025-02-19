@@ -13,7 +13,9 @@ function detectEnvironment()
     }
 }
 
-return [
+global $config;
+
+$config = [
     'development' => [
         'host' => 'localhost',
         'username' => 'root',
@@ -29,6 +31,8 @@ return [
         'base_url' => '/backend',      
     ],
 ];
+
+//var_dump($config); die();
 
 
 ?>

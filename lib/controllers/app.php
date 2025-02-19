@@ -28,10 +28,11 @@ class App
 	function __construct()
 	{
 		global $template, $db, $car, $user, $otp;
-
+		global $config;
+		
 		// Start the user session, used for storing cookies.
 		session_start();
-		$config = require __DIR__ . '../../../config/config.php';
+		//$config = require __DIR__ . '../../../config/config.php';		
 		$environment = detectEnvironment();
 		$envConfig = $config[$environment];
 		$this->host = $envConfig['host'];
