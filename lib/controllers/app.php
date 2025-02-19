@@ -27,7 +27,7 @@ class App
 	 */
 	function __construct()
 	{
-		global $template, $db, $car, $user;
+		global $template, $db, $car, $user, $otp;
 
 		// Start the user session, used for storing cookies.
 		session_start();
@@ -67,6 +67,7 @@ class App
 		$template = new TemplateModel;
 		$car = new carModel;
 		$user = new userModel;
+		$otp = new OtpModel;
 		
 		// Figure out which controller the user is requesting and perform the
 		// correct actions.

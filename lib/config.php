@@ -43,4 +43,4 @@ require_once(LIB_DIR . "/helpers.php");
 require_once(LIB_DIR . "/models/car.php");
 require_once(LIB_DIR . "/models/user.php");
 require_once(LIB_DIR . "/models/template.php");
-//require_once(LIB_DIR . "/models/reports.php");
+require_once(LIB_DIR . "/models/otp.php");
