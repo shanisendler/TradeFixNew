@@ -13,9 +13,22 @@ class OtpModel
 
     global $db;
 
-    // שמירת ה-OTP בטבלה זמנית
-    $query = $db->prepare("INSERT INTO otp_codes (session_id, phone, otp) VALUES (?, ?, ?)");
-    $query->execute([$session_id, $phone, $otp]);
+    try {
+
+      // שמירת ה-OTP בטבלה זמנית
+      $query = $db->prepare("INSERT INTO otp_codes (session_id, phone, otp) VALUES (?, ?, ?)");
+      $query->execute([$session_id, $phone, $otp]);
+
+      echo json_encode(["success" => true, "message" => "OTP נשמר בהצלחה"]);
+    } catch (PDOException $e) {
+      // טיפול בשגיאה – הדפסת השגיאה עם פרטי השגיאה
+      echo json_encode([
+        "success" => false,
+        "message" => "שגיאה בשמירת ה-OTP: " . $e->getMessage()
+      ]);
+
+      die();
+    }
 
   }
 
@@ -24,7 +37,7 @@ class OtpModel
   {
 
     global $db;
-    
+
     // בדיקה שה-OTP נכון
     $stmt = $db->prepare("SELECT * FROM otp_codes WHERE session_id = ? AND phone = ? AND otp = ? AND insert_date > NOW() - INTERVAL 10 MINUTE");
     $stmt->execute([$session_id, $phone, $otp]);
