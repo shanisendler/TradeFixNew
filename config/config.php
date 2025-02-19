@@ -21,9 +21,9 @@ return [
         'database' => 'tradefixbrglp_legalLoss',       
     ],
     'production' => [
-        'host' => '',
-        'username' => '',
-        'password' => '',
+        'host' => 'webxpcpanel.spd.co.il',
+        'username' => 'tradefixbrglp_legalLoss',
+        'password' => '3XZWG;@6]JPA',
         'database' => 'tradefixbrglp_legalLoss',        
     ],
 ];
