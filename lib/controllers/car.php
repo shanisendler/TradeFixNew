@@ -13,9 +13,12 @@ class Car
 
 		global $car;
 
-        echo $car->getBycarID($car_id);
+        echo $car->getBycarID($car_id);  
 		
 	}
+
+
+	
 
 
 	
